@@ -13,7 +13,7 @@ public class Stairs {
         
         for(int i=0; i<n; i++){
             for(int j = 0; j<k; j++){
-                System.out.print("b");
+                System.out.print(" ");
                 
             }
             
