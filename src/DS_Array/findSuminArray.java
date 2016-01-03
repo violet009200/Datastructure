@@ -51,11 +51,35 @@ public class findSuminArray {
 		if(i<right){ quickSort(arr,i,right);}
 	}
 	
+	
+	public static void useHashMap(int[] arr, int x){
+		  // Declares and initializes the whole array as false
+        boolean[] binmap = new boolean[100000];
+ 
+        for (int i=0; i<arr.length; ++i)
+        {
+            int temp = x-arr[i];
+ 
+            // checking for condition
+            if (temp>=0 && binmap[temp])
+            {
+                System.out.println("Pair with given sum " +
+                                    x + " is (" + arr[i] +
+                                    ", "+temp+")");
+            }
+            binmap[arr[i]] = true;
+        }
+	}
+
+	
 	public static void main(String[] args){
-		int[] arr = {1, 4, 45, 6, 10, -8};
+		int[] arr = {1, 4, 45, 6, 10, 8};
 		useSorting(arr,16);
 		useSorting(arr,10);
 		useSorting(arr,0);
-		
+		System.out.println("------------------------------");
+		useHashMap(arr,16);
+		useHashMap(arr,10);
+		useHashMap(arr,0);
 	}
 }
