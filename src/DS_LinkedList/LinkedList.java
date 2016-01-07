@@ -1,6 +1,6 @@
 package DS_LinkedList;
 
-public class InsertNode {
+public class LinkedList {
 
 	Node head;
 	class Node{
@@ -116,8 +116,31 @@ public class InsertNode {
 		printList();
 	}
 	
+	public void findLengthIterative(LinkedList ll){
+		System.out.println("find length of LL by using Iterative");
+		int length = 0;
+		Node cur = ll.head;
+		
+		while(cur != null){
+			length++;
+			cur = cur.next;
+		}
+		
+		System.out.println("length is: "+length);
+		
+	}
+	
+	public int findLengthRecursive(Node n){
+		
+		if(n == null) {
+			return 0;
+		}
+		
+		return 1+findLengthRecursive(n.next);
+	}
+	
 	public static void main(String[] args){
-		InsertNode linkedlist = new InsertNode();
+		LinkedList linkedlist = new LinkedList();
 		linkedlist.insertFront(5);
 		linkedlist.insertFront(4);
 		linkedlist.insertFront(3);
@@ -135,5 +158,11 @@ public class InsertNode {
 		linkedlist.deleteNodeatPosition(2);
 		
 		linkedlist.insertNodeatPosition(7, 2);
+		
+		linkedlist.findLengthIterative(linkedlist);
+		
+		System.out.println("find length of LL by using Recursive");
+		int len = linkedlist.findLengthRecursive(linkedlist.head);
+		System.out.println("length is :"+len);
 	}
 }
