@@ -74,6 +74,48 @@ public class InsertNode {
 		System.out.println("");
 	}
 	
+	public void deleteNode(int d){
+		Node cur = head;
+		
+		while(cur.next != null){
+			if(cur.next.data == d){
+				//delete node
+				cur.next = cur.next.next;
+				break;
+			}
+			else cur = cur.next;
+		}
+		System.out.println("after delete node");
+		printList();
+	}
+	
+	public void deleteNodeatPosition(int pos){
+		Node cur = head;
+		int i;
+		for(i=1; i<pos-1; i++){
+			cur = cur.next;
+		}
+		//delete cur.next
+		cur.next = cur.next.next;
+		
+		System.out.println("deleting Node at pos: "+pos);
+		printList();
+	}
+	
+	public void insertNodeatPosition(int d, int pos){
+		Node newNode = new Node(d);
+		Node cur = head;
+		
+		for(int i=1; i<pos;i++){
+			cur = cur.next;
+		}
+		newNode.next = cur.next;
+		cur.next = newNode;
+		
+		System.out.println("Insert Node at pos: "+pos);
+		printList();
+	}
+	
 	public static void main(String[] args){
 		InsertNode linkedlist = new InsertNode();
 		linkedlist.insertFront(5);
@@ -87,5 +129,11 @@ public class InsertNode {
 		
 		linkedlist.insertEnd(10);
 		linkedlist.insertEnd(11);
+		
+		linkedlist.deleteNode(3);
+		
+		linkedlist.deleteNodeatPosition(2);
+		
+		linkedlist.insertNodeatPosition(7, 2);
 	}
 }
