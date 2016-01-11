@@ -139,6 +139,11 @@ public class LinkedList {
 		return 1+findLengthRecursive(n.next);
 	}
 	
+	
+	public void swapNode(int x, int y){
+		
+	}
+	
 	public static void main(String[] args){
 		LinkedList linkedlist = new LinkedList();
 		linkedlist.insertFront(5);
