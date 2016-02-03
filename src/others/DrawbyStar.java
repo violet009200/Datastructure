@@ -1,3 +1,4 @@
+package others;
 
 //draw a rectangle by stars and numbers as shown   below 1 12 123 1234 12345 * ** *** **** ***** ****** 
 
